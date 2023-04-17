@@ -24,5 +24,9 @@
             android:id="@+id/nav_musica"
             android:icon="@color/cardview_shadow_end_color"
             android:title="Musica"/>
+        <item
+            android:id="@+id/nav_salir"
+            android:icon="@color/cardview_shadow_end_color"
+            android:title="Salir"/>
     </group>
 </menu>

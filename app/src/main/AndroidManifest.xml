@@ -16,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPAnexo"
         tools:targetApi="31">
+        <service
+            android:name=".ui.musica.ServicioMusical"
+            android:enabled="true"
+            android:exported="true"></service>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDDQIKsmuGd02yGXb77VB1pXnhHFjymZg0"/>

@@ -32,4 +32,9 @@
         android:name="com.duvarax.tpanexo.ui.musica.MusicaFragment"
         android:label="fragment_musica"
         tools:layout="@layout/fragment_musica" />
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.duvarax.tpanexo.ui.salir.SalirFragment"
+        android:label="fragment_salir"
+        tools:layout="@layout/fragment_salir" />
 </navigation>

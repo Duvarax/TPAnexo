@@ -44,7 +44,6 @@ public class UbicacionFragment extends Fragment {
 
     private UbicacionViewModel mViewModel;
     private FragmentUbicacionBinding binding;
-    private GoogleMap map;
     private FusedLocationProviderClient fused;
     private Context context;
     public LatLng ubicacion;
@@ -60,9 +59,6 @@ public class UbicacionFragment extends Fragment {
         context = this.getContext();
         View root = binding.getRoot();
         obtenerUltimaUbicacion();
-
-
-
         return root;
     }
 

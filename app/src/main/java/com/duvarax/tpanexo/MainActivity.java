@@ -22,13 +22,21 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MainAcitivityViewModel mv;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        binding.etContraseA.setText("");
+        binding.etUsuario.setText("");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mv = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainAcitivityViewModel.class);
-
+        solicitarPermiso();
         mv.getLogeado().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean logeado) {
@@ -42,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                solicitarPermiso();
+
                 mv.logear(binding.etUsuario.getText()+"", binding.etContraseA.getText()+"");
             }
         });
+
 
 
 
