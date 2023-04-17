@@ -30,9 +30,11 @@ public class MainAcitivityViewModel extends AndroidViewModel {
         if(usuario.equals("admin") && contraseña.equals("admin")){
             Intent intent = new Intent(context, NavigationActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             context.startActivity(intent);
         }else{
             logeado.setValue(false);
         }
     }
+
 }

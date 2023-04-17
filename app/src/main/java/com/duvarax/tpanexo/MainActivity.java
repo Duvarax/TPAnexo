@@ -1,10 +1,15 @@
 package com.duvarax.tpanexo;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,9 +42,20 @@ public class MainActivity extends AppCompatActivity {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                solicitarPermiso();
                 mv.logear(binding.etUsuario.getText()+"", binding.etContraseA.getText()+"");
             }
         });
+
+
+
+    }
+    public void solicitarPermiso() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && (checkSelfPermission(ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) || (checkSelfPermission(ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, 1000);
+        }
 
     }
 }
