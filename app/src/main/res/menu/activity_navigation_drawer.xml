@@ -20,5 +20,9 @@
             android:id="@+id/nav_ubicacion"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Ubicacion"/>
+        <item
+            android:id="@+id/nav_musica"
+            android:icon="@color/cardview_shadow_end_color"
+            android:title="Musica"/>
     </group>
 </menu>

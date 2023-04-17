@@ -27,4 +27,9 @@
         android:name="com.duvarax.tpanexo.ui.ubicacion.UbicacionFragment"
         android:label="fragment_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
+    <fragment
+        android:id="@+id/nav_musica"
+        android:name="com.duvarax.tpanexo.ui.musica.MusicaFragment"
+        android:label="fragment_musica"
+        tools:layout="@layout/fragment_musica" />
 </navigation>
